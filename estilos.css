@@ -1,18 +1,11 @@
-*{
-    margin: 0px;
-    padding: 0px;
-}
 body{
+    margin: 0;
+    padding: 0;
     background: white;
     font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
 }
 
-#container{
-    background: lightblue;
-    width: 1400px;
-    margin: 0px auto;
-    border: 1px solid black;
-}
 
 header{
     background: lightgrey;
@@ -24,9 +17,58 @@ header{
     border-bottom: 1px solid black;
 }
 
+input[type="text"]{
+    outline: none;
+    padding: 20px;
+    display: block;
+    width: 300px;
+    border-radius: 3px;
+    border: 1px solid #eee;
+    margin: 20px auto;
+}
+
+input[type="submit"]{
+    padding: 10px;
+    color: white;
+    background: hwb(209 2% 47% / 0.644);
+    width: 260px;
+    margin: 60px auto;
+    margin-top: 0;
+    border: 0;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+input[type="date"]{
+    padding: 15px;
+    width: 320px;
+    margin: 10px;background: ;
+    border-radius: 3px;
+}
+
+input[type="reset"]{
+    outline: none;
+    padding: 8px;
+    margin: 10px;
+    display: block center;
+    border-radius: 3px;
+    background: gray;
+    color: white;
+    cursor: pointer;
+
+}
+
+input[type="submit"]:hover{
+    background-color: green;
+}
+
+input[type="reset"]:hover{
+    background-color: red;
+}
+
 nav{
     background: lightblue;
-    height: 50px;
+    height: 70px;
     border: 1px solid black;
 }
 
@@ -38,18 +80,6 @@ nav ul li{
     line-height: 30px;
 }
 
-.clearfix{
-    clear: both;
-}
-
-
-#content{
-    float: left;
-    width: calc(100% - 100px);
-    background: white;
-    min-height: 350px;
-    padding: 40px;
-}
 
 
 footer{
