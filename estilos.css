@@ -22,8 +22,8 @@ input[type="text"]{
     padding: 20px;
     display: block;
     width: 300px;
-    border-radius: 3px;
-    border: 1px solid #eee;
+    border-radius: 8px;
+    border: 1px solid blue;
     margin: 20px auto;
 }
 
@@ -31,26 +31,26 @@ input[type="submit"]{
     padding: 10px;
     color: white;
     background: hwb(209 2% 47% / 0.644);
-    width: 260px;
-    margin: 60px auto;
+    width: 250px;
+    margin: 60px;
     margin-top: 0;
-    border: 0;
+    border: 3px black;
     border-radius: 3px;
     cursor: pointer;
 }
 
 input[type="date"]{
     padding: 15px;
-    width: 320px;
-    margin: 10px;background: ;
+    width: 310px;
+    margin: 10px;
     border-radius: 3px;
+    border: 1px solid blue;
 }
 
 input[type="reset"]{
     outline: none;
-    padding: 8px;
-    margin: 10px;
-    display: block center;
+    padding: 7px;
+    margin: 0px;
     border-radius: 3px;
     background: gray;
     color: white;
