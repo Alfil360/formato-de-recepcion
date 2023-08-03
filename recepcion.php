@@ -30,14 +30,14 @@
 
         </nav>
 
-            <form action="" method="">
-                <input type="text" name="" id="" placeholder="Proveedor">
-                <input type="text" name="" id="" placeholder="Nit">
-                <input type="text" name="" id="" placeholder="Conductor">
-                <input type="text" name="" id="" placeholder="Cedula">
-                <input type="text" name="" id="" placeholder="Placa">
-                <input type="text" name="" id="" placeholder="Lote">
-                <input type="text" name="" id="" placeholder="Procedencia">
+            <form action="bascula.php" method="POST">
+                <input type="text" name="Pro" id="" placeholder="Proveedor">
+                <input type="text" name="Nit" id="" placeholder="Nit">
+                <input type="text" name="Cond" id="" placeholder="Conductor">
+                <input type="text" name="Ced" id="" placeholder="Cedula">
+                <input type="text" name="Pla" id="" placeholder="Placa">
+                <input type="text" name="Lote" id="" placeholder="Lote">
+                <input type="text" name="Proceden" id="" placeholder="Procedencia">
                 <input type="submit" name="" id="" value="Guardar">
                 <input type="reset" value="Borrar">
             </form>

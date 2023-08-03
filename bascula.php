@@ -30,20 +30,17 @@
 
         </nav>
 
-            <form action="" method="">
-                <input type="text" name="" id="" placeholder="Tiquete de Báscula">
-                <input type="text" name="" id="" placeholder="Peso Bruto">
-                <input type="text" name="" id="" placeholder="Tara">
-                <input type="text" name="" id="" placeholder="Peso Neto">
-                <br>
-                <br>
+            <form action="calidad.php" method="POST">
+                <input type="text" name="tiquete" id="" placeholder="Tiquete de Báscula">
+                <input type="text" name="bruto" id="" placeholder="Peso Bruto">
+                <input type="text" name="tara" id="" placeholder="Tara">
+                <input type="text" name="neto" id="" placeholder="Peso Neto">
                 <br>
                 <input id="granel" type="radio" name="empaque">
                 <label for="granel">Granel</label>
                 <input id="bultos" type="radio" name="empaque">
                 <label for="bultos">Bultos</label>
-                <br>
-                <br>
+                <input type="text" name="bultos" id="" placeholder="cantidad">
                 <br>
                 <input type="submit" name="" id="" value="Guardar">
                 <input type="reset" value="Borrar">

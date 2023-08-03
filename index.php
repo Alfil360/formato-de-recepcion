@@ -11,9 +11,9 @@
     <img src="https://icons.veryicon.com/png/o/internet--web/prejudice/user-128.png" alt="foto de perfil">
     <p>Por favor, ingrese su usuario y contraseña</p>
 
-        <form action="" method="">
-            <input type="text" name="" id="" placeholder="Ingrese usuario" required="">
-            <input type="password" name="" id="" placeholder="Contraseña" required="">
+        <form action="./conexion/login.php" method="POST">
+            <input type="text" name="Nusuario" id="" placeholder="Ingrese usuario" required="">
+            <input type="password" name="pass" id="" placeholder="Contraseña" required="">
             <input type="submit" name="" id="" value="Iniciar Sesión">
         </form>
     

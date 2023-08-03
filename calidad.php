@@ -31,15 +31,15 @@
             </nav>
 
                 <form action="" method="">
-                    <input type="text" name="" id="" placeholder="Humedad">
-                    <input type="text" name="" id="" placeholder="Impurezas">
-                    <input type="text" name="" id="" placeholder="Grano Partido">
-                    <input type="text" name="" id="" placeholder="Grano Yesado">
-                    <input type="text" name="" id="" placeholder="Grano Rojo">
-                    <input type="text" name="" id="" placeholder="Olor">
-                    <input type="text" name="" id="" placeholder="Daño por Hongo">
-                    <input type="text" name="" id="" placeholder="Daño por Calor">
-                    <input type="text" name="" id="" placeholder="Inmaduro">
+                    <input type="text" name="humedad" id="" placeholder="Humedad">
+                    <input type="text" name="impureza" id="" placeholder="Impurezas">
+                    <input type="text" name="partido" id="" placeholder="Grano Partido">
+                    <input type="text" name="yesado" id="" placeholder="Grano Yesado">
+                    <input type="text" name="rojo" id="" placeholder="Grano Rojo">
+                    <input type="text" name="olor" id="" placeholder="Olor">
+                    <input type="text" name="hongo" id="" placeholder="Daño por Hongo">
+                    <input type="text" name="calor" id="" placeholder="Daño por Calor">
+                    <input type="text" name="inmaduro" id="" placeholder="Inmaduro">
                     <br>
                     <input id="Aceptado" type="radio" name="Calidad">
                     <label for="Aceptado">Aceptado</label>
