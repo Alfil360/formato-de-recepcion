@@ -22,7 +22,7 @@
         // Redirige a la página correspondiente al tipo de funcionario
         switch ($tipoFuncionario) {
             case 'recepcion':
-                header("location:../recepcion.php");
+                header("location:../recepcionForm.php");
                 break;
             case 'bascula':
                 header("location:../bascula.php");
