@@ -9,14 +9,12 @@ body{
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
-    
+    align-items: center;    
 }
 
 section{
     height: 914px;
     width: 480px;
-    border: 1px solid #ccc;
     background: linear-gradient(#acabab, rgb(233, 243, 254));
     display: flex;
     flex-direction: column;
@@ -45,3 +43,44 @@ section form input{
     padding: 1rem;
 }
 
+h4{
+    color: red;
+    font-weight: 400;
+    visibility: hidden;
+}
+
+/* Estilos para tabletas (por ejemplo, entre 768px y 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    body {
+        background-color: #f0f0f0;
+        background-image: linear-gradient(#acabab, rgb(233, 243, 254));
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    section {
+        width: 60%;
+        height: auto;
+        background: none;
+    }
+}
+
+/* Estilos para pantallas de ordenador (por ejemplo, más de 1024px) */
+@media (min-width: 1025px) {
+    body {
+        background-color: #f0f0f0; /* Color de fondo para toda la pantalla */
+        background-image: linear-gradient(#acabab, rgb(233, 243, 254)); /* Fondo degradado */
+        background-size: cover; /* Cubrir toda la pantalla con el fondo */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    section {
+        width: 40%;
+        height: auto;
+        background: none; /* No se necesita un fondo en la sección */
+    }
+}
