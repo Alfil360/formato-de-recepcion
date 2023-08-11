@@ -4,47 +4,156 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recepción</title>
-    <link rel="stylesheet" href="estilos.css">
+    <title>Recepcion</title>
+    <link rel="stylesheet" href="../formato-de-recepcion/estilos/cards.css">
+    <script src="https://kit.fontawesome.com/88a36f4c42.js" crossorigin="anonymous"></script>
 </head>
 <body>
-        <header>
-            <div class="imagenLogo">
-            <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/13077/windmill-clipart-md.png" alt="logo molino">
-            </div>
-
+    <section>
+        <header> 
+            <i class="fa-solid fa-bars custom-icon" onclick="toggleDropdown()"></i>
             <div class="headerText">
-            <h2>Ingreso de materia prima. Recepción</h2>
+                <h1>Recepción</h1>
             </div>
-
+            <a href="#" class="imagenPrint">
+                <img src="https://cdn.iconscout.com/icon/free/png-256/free-printer-1629573-1383399.png" id="iconoPrint" alt="printIcon">
+            </a>
+            <a href="#" class="span2">
+                <img src="https://cdn.iconscout.com/icon/free/png-256/eye-1767966-1502302.png" id="iconoEye" alt="eyetIcon">
+            </a>           
         </header>
-        <nav>
-            <ul>
-                <li>
-                    <a href="">Inicio</a>
-                </li>
-                <li>
-                    <a href="">Nuevo Formato</a>
-                </li>
-            </ul>
+        <main>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="/actualizarDatos.html">
+                    <div class="containerTextoAndIconDropdown">
+                        <span>Perfil</span>
+                        <img class="imagenDropdown" src="https://cdn.iconscout.com/icon/free/png-256/free-user-circle-3609976-3014616.png" alt="circle user icon">
+                    </div>
+                </a>
+                <div class="divider"></div>
+                <a href="/index.html">
+                    <div class="containerTextoAndIconDropdown">
+                        <span>Cerrar sesión</span>
+                        <img class="imagenDropdown" src="https://images.vexels.com/media/users/3/153377/isolated/lists/4e3ad7aee69e5da6de7e91b63e3952de-turn-off-stroke-icon.png" alt="on off icon">
+                    </div> 
+                </a>                    
+            </div>
+            <a href="../formato-de-recepcion/recepcionForm.php" class="card">
+                <i class="fa-solid fa-plus"></i>
+                <div class="containerText">
+                  <p>Generar nuevo formato</p>
+                </div>
+            </a>
+            <div class="card2">
+                <i class="fa-regular fa-file-pdf"></i>
+                <div class="containerText2">
+                  <p>F1</p>
+                </div>
+            </div>
+            <div class="card2">
+                <i class="fa-regular fa-file-pdf"></i>
+                <div class="containerText2">
+                  <p>F2</p>
+                </div>
+            </div>
+            <div class="card2">
+                <i class="fa-regular fa-file-pdf"></i>
+                <div class="containerText2">
+                  <p>F3</p>
+                </div>
+            </div>
+            <div class="card2">
+                <i class="fa-regular fa-file-pdf"></i>
+                <div class="containerText2">
+                  <p>F4</p>
+                </div>
+            </div>
+            <div class="card2">
+                <i class="fa-regular fa-file-pdf"></i>
+                <div class="containerText2">
+                  <p>F5</p>
+                </div>
+            </div>
+            <div class="card2">
+                <i class="fa-regular fa-file-pdf"></i>
+                <div class="containerText2">
+                  <p>F6</p>
+                </div>
+            </div>
+        </main>
+    </section>    
+    <!-- <script>
+        function myFunction(x) {
+          x.classList.toggle("change");
+        }        
+    </script> -->
+    <script>
+        //Script para el menu desplegable
+        function toggleDropdown() {
+            var dropdown = document.getElementById("myDropdown");
+            dropdown.classList.toggle("show");
+        }
 
-        </nav>
+        window.onclick = function(event) {
+            if (!event.target.matches('.custom-icon')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                var i;
+                for (i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+    <script>
+        //Script para cambiar las card al hacer click
+        //Seleccionar todas las cards por su clase y agregar un evento de clic a cada una
+        const cards = document.querySelectorAll(".card2");
+        let activeCard = null; // variable para almacenar la card activa actualmente
 
-            <form action="bascula.php" method="POST">
-                <input type="text" name="Pro" id="" placeholder="Proveedor">
-                <input type="text" name="Nit" id="" placeholder="Nit">
-                <input type="text" name="Cond" id="" placeholder="Conductor">
-                <input type="text" name="Ced" id="" placeholder="Cedula">
-                <input type="text" name="Pla" id="" placeholder="Placa">
-                <input type="text" name="Lote" id="" placeholder="Lote">
-                <input type="text" name="Proceden" id="" placeholder="Procedencia">
-                <input type="submit" name="" id="" value="Guardar">
-                <input type="reset" value="Borrar">
-            </form>
+        cards.forEach(function(card2) {
+            card2.addEventListener("click", function() {
+                // Si hay una card activa y no es la misma que la que se hizo clic, desactivarla
+                if (activeCard !== null && activeCard !== this) {
+                activeCard.style.backgroundColor = "";
+                activeCard.querySelector(".svg-inline--fa").style.color = ""; // Cambia esto a tu propiedad deseada
+                activeCard.querySelector("p").style.color = "";
+                // activeCard.querySelector("span").style.display = "none"; // desactivar el icono activo
+                }
 
-        <footer>
-            Todos los derechos reservados 2023
-        </footer>
+                //obtener el elemento icono
+                const iconoHeaderPrint = document.getElementById("iconoPrint");
+                const iconoHeaderEye = document.getElementById("iconoEye");
 
+                // Si la card está inactiva, cambiar su estilo de fondo a un nuevo color y marcarla como activa
+                if (this.style.backgroundColor === "") {
+                this.style.backgroundColor = "#a6a6a6"; // aqui se cambia el atributo
+                this.querySelector(".svg-inline--fa").style.color = "#737373"; // Cambia esto a tu propiedad deseada
+                this.querySelector("p").style.color = "#737373";
+                this.querySelector("p").style.fontWeight = "bold";
+                // this.querySelector("span").style.display = ""; // activar el icono correspondiente
+                activeCard = this; // actualizar la referencia de la card activa
+                //activar el icono si hay card activa
+                iconoHeaderPrint.style.display = "block";
+                iconoHeaderEye.style.display = "block";
+                } else { // Si la card está activa, cambiar su estilo de fondo a su color original y marcarla como inactiva
+                this.style.backgroundColor = "";
+                this.querySelector(".svg-inline--fa").style.color = ""; // Cambia esto a tu propiedad deseada
+                this.querySelector("p").style.color = "";
+                // this.querySelector("span").style.display = "none"; // desactivar el icono activo
+                activeCard = null; // actualizar la referencia de la card activa
+                }
+                //Para desactivar el icono si no hay card activa
+                if (activeCard === null) {
+                    iconoHeaderPrint.style.display = "none";
+                    iconoHeaderEye.style.display = "none";
+                }
+            });
+        });
+    </script>
+    
+    
 </body>
 </html>

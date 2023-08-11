@@ -19,7 +19,7 @@
         <main>
             <div class="contenido">
                 <p>Por favor, ingrese los datos del proveedor y del conductor</p>
-                <form action="/recepcion.html" method="">
+                <form action="../formato-de-recepcion/recepcion.php" method="POST">
                     <input type="text" placeholder="Proveedor" name="proveedor" id="proveedor">
                     <input type="text" placeholder="NIT" name="nit" id="nit">
                     <input type="text" placeholder="Conductor" name="conductor" id="conductor">
