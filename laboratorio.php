@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Báscula</title>
+    <title>Laboratorio</title>
     <link rel="stylesheet" href="../formato-de-recepcion/estilos/cards.css">
     <script src="https://kit.fontawesome.com/88a36f4c42.js" crossorigin="anonymous"></script>
 </head>
@@ -12,7 +12,7 @@
         <header>            
             <i class="fa-solid fa-bars custom-icon" onclick="toggleDropdown()"></i>
             <div class="headerText">
-                <h1>Báscula</h1>
+                <h1>Laboratorio</h1>
             </div>                      
         </header>
         <main>
@@ -31,40 +31,64 @@
                     </div> 
                 </a>                    
             </div>            
-            <a class="card2" href="/basculaForm.html">
+            <a class="card2" href="/laboratorioMenu.html">
                 <i class="fa-regular fa-file-pdf"></i>
                 <div class="containerText2">
                   <p>F1</p>
                 </div>
             </a>
-            <a class="card2" href="/basculaForm.html">
+            <a class="card2" href="/laboratorioMenu.html">
                 <i class="fa-regular fa-file-pdf"></i>
                 <div class="containerText2">
                   <p>F2</p>
                 </div>
             </a>
-            <a class="card2" href="/basculaForm.html">
+            <a class="card2" href="/laboratorioMenu.html">
                 <i class="fa-regular fa-file-pdf"></i>
                 <div class="containerText2">
                   <p>F3</p>
                 </div>
             </a>
-            <a class="card2" href="/basculaForm.html">
+            <a class="card2" href="/laboratorioMenu.html">
                 <i class="fa-regular fa-file-pdf"></i>
                 <div class="containerText2">
                   <p>F4</p>
                 </div>
             </a>
-            <a class="card2" href="/basculaForm.html">
+            <a class="card2" href="/laboratorioMenu.html">
                 <i class="fa-regular fa-file-pdf"></i>
                 <div class="containerText2">
                   <p>F5</p>
                 </div>
             </a>
-            <a class="card2" href="/basculaForm.html">
+            <a class="card2" href="/laboratorioMenu.html">
                 <i class="fa-regular fa-file-pdf"></i>
                 <div class="containerText2">
                   <p>F6</p>
+                </div>
+            </a>
+            <a class="card2" href="/laboratorioMenu.html">
+                <i class="fa-regular fa-file-pdf"></i>
+                <div class="containerText2">
+                  <p>F7</p>
+                </div>
+            </a>
+            <a class="card2" href="/laboratorioMenu.html">
+                <i class="fa-regular fa-file-pdf"></i>
+                <div class="containerText2">
+                  <p>F8</p>
+                </div>
+            </a>
+            <a class="card2" href="/laboratorioMenu.html">
+                <i class="fa-regular fa-file-pdf"></i>
+                <div class="containerText2">
+                  <p>F9</p>
+                </div>
+            </a>
+            <a class="card2" href="/laboratorioMenu.html">
+                <i class="fa-regular fa-file-pdf"></i>
+                <div class="containerText2">
+                  <p>F10</p>
                 </div>
             </a>
         </main>
