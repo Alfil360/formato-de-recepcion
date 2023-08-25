@@ -8,6 +8,30 @@
     <script src="https://kit.fontawesome.com/88a36f4c42.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <!-- <?/*php
+        // Incluye el archivo de conexión
+        require_once "conexion.php";
+
+        function obtenerRegistrosDesdeDB($conexion) {
+            // Código para obtener los registros desde la base de datos utilizando $conexion
+            $query = "SELECT numero FROM formato";
+            $resultado = $conexion->query($query);
+
+            $registros = [];
+
+            if ($resultado->num_rows > 0) {
+                while ($fila = $resultado->fetch_assoc()) {
+                    $registros[] = $fila;
+                }
+            }
+
+            $conexion->close();
+
+            return $registros;
+        }
+
+        $registros = obtenerRegistrosDesdeDB($conexion);
+    */?> -->
     <section>
         <header>            
             <i class="fa-solid fa-bars custom-icon" onclick="toggleDropdown()"></i>
@@ -30,8 +54,20 @@
                         <img class="imagenDropdown" src="https://images.vexels.com/media/users/3/153377/isolated/lists/4e3ad7aee69e5da6de7e91b63e3952de-turn-off-stroke-icon.png" alt="on off icon">
                     </div> 
                 </a>                    
-            </div>            
-            <a class="card2" href="../formato-de-recepcion/laboratorioMenu.php">
+            </div>   
+            <?php if (!empty($registros)): ?>
+                <?php foreach ($registros as $registro): ?>
+                    <a class="card2" href="../formato-de-recepcion/laboratorioMenu.php">
+                        <i class="fa-regular fa-file-pdf"></i>
+                        <div class="containerText2">
+                            <p><?php echo $registro["nombre"]; ?></p>
+                        </div>
+                    </a>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>No hay registros disponibles.</p>
+            <?php endif; ?>         
+            <!-- <a class="card2" href="../formato-de-recepcion/laboratorioMenu.php">
                 <i class="fa-regular fa-file-pdf"></i>
                 <div class="containerText2">
                   <p>F1</p>
@@ -90,7 +126,7 @@
                 <div class="containerText2">
                   <p>F10</p>
                 </div>
-            </a>
+            </a> -->
         </main>
     </section> 
     <script>
