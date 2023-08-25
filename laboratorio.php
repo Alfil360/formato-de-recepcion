@@ -31,7 +31,7 @@
                     </div> 
                 </a>                    
             </div>            
-            <a class="card2" href="/laboratorioMenu.html">
+            <a class="card2" href="../formato-de-recepcion/laboratorioMenu.php">
                 <i class="fa-regular fa-file-pdf"></i>
                 <div class="containerText2">
                   <p>F1</p>

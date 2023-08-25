@@ -18,19 +18,19 @@
             </div>                      
         </header>
         <main>                       
-            <a class="card2" href="/laboratorioFormQ.html">
+            <a class="card2" href="../formato-de-recepcion/calidad.php">
                 <img class="icon-card" src="../formato-de-recepcion/imagenes/data-quality.svg" alt="quality">
                 <div class="containerText2">
                   <p>Calidad</p>
                 </div>
             </a>
-            <a class="card2" href="/laboratorioFormD.html">
+            <a class="card2" href="../formato-de-recepcion/secado.php">
                 <img class="icon-card" src="../formato-de-recepcion/imagenes/drying-tumble.svg" alt="drying-tumble">
                 <div class="containerText2">
                   <p>Secado</p>
                 </div>
             </a>
-            <a class="card2" href="/laboratorioFormS.html">
+            <a class="card2" href="../formato-de-recepcion/almacenamiento.php">
                 <img class="icon-card" src="../formato-de-recepcion/imagenes/silo.svg" alt="silo">
                 <div class="containerText2">
                   <p>Almacenamiento</p>
