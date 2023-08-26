@@ -5,7 +5,7 @@
 $servidor = "localhost";
 $usuario = "root";
 $clave = "";
-$db = "proyecto";
+$db = "formato";
 
 
 // crear conexión
