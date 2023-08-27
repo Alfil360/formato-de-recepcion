@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,16 +22,70 @@
         <main>
             <div class="contenido">
                 <p>Por favor, ingrese los datos del proveedor y del conductor</p>
-                <form action="../formato-de-recepcion/recepcion.php" method="POST">
-                    <input type="text" placeholder="Proveedor" name="proveedor" id="proveedor">
-                    <input type="text" placeholder="NIT" name="nit" id="nit">
-                    <input type="text" placeholder="Conductor" name="conductor" id="conductor">
-                    <input type="text" placeholder="Cedula" name="cedula" id="cedula">
-                    <input type="text" placeholder="Placa" name="placa" id="placa">
-                    <input type="text" placeholder="Lote" name="lote" id="lote">
+                <form action="../formato-de-recepcion/conexion/recep.php" method="POST">
+                    <select name="proveedor" id="proveedor">
+                    <option value="" disabled selected>Selecciona un proveedor</option>
+                        <?php
+                            // Conexión a la base de datos 
+                            include '../formato-de-recepcion/conexion/conexion.php';
+                            
+                            // Consulta para obtener los proveedores
+                            $consulta = "SELECT NIT, nombre, apellido FROM Proveedores";
+                            $result = mysqli_query($conexion, $consulta);
+                            
+                            // Generar opciones a partir de los datos obtenidos
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo '<option value="' . $row['NIT'] . '">' . $row['nombre'] . '  ' . $row['apellido'] . '</option>';
+                            }
+                            
+                            // Cerrar la conexión
+                            mysqli_close($conexion);
+                        ?>
+                    </select>
+                    <select name="conductor" id="conductor">
+                    <option value="" disabled selected>Selecciona un conductor</option>
+                        <?php
+                            // Conexión a la base de datos 
+                            include '../formato-de-recepcion/conexion/conexion.php';
+                            
+                            // Consulta para obtener los conductores
+                            $consulta = "SELECT cedula, nombre, apellido FROM conductores";
+                            $result = mysqli_query($conexion, $consulta);
+                            
+                            // Generar opciones a partir de los datos obtenidos
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo '<option value="' . $row['cedula'] . '">' . $row['nombre'] . '  ' . $row['apellido'] . '</option>';
+                            }
+                            
+                            // Cerrar la conexión
+                            mysqli_close($conexion);
+                        ?>
+                    </select>
+                    <select name="vehiculo" id="vehiculo">
+                    <option value="" disabled selected>Seleccione un vehiculo</option>
+                        <?php
+                            // Conexión a la base de datos 
+                            include '../formato-de-recepcion/conexion/conexion.php';
+                            
+                            // Consulta para obtener los vehiculos
+                            $consulta = "SELECT placa FROM vehiculos";
+                            $result = mysqli_query($conexion, $consulta);
+                            
+                            // Generar opciones a partir de los datos obtenidos
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo '<option value="' . $row['placa'] . '">' . $row['placa'] . '</option>';
+                            }
+                            
+                            // Cerrar la conexión
+                            mysqli_close($conexion);
+                        ?>
+                    </select>
+                    <input type="date" name="fecha_recibo">            
+                    <input type="text" placeholder="Variedad" name="variedad" id="variedad">
+                    <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
                     <input type="text" placeholder="Procedencia" name="procedencia" id="procedencia">
                     <input type="submit" value="ENVIAR">
-                </form>
+                </form>               
             </div>
         </main>                        
     </section>  
@@ -36,5 +93,4 @@
         © Todos los derechos reservados 2023
     </footer>
 </body>
-
 </html>

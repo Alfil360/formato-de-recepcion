@@ -1,3 +1,6 @@
+<?php
+    session_start();    
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,52 +8,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calidad</title>
-    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="../formato-de-recepcion/estilos/form.css">
 </head>
 <body>
-    <body>
-            <header>
+    <section>
+        <header>
                 <div class="imagenLogo">
                     <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/13077/windmill-clipart-md.png" alt="logo molino">
-                    </div>
+                </div>
         
-                    <div class="headerText">
-                    <h2>Control de calidad. Laboratorio</h2>
-                    </div>
-            </header>
-
-            <nav>
-                <ul>
-                    <li>
-                        <a href="">Inicio</a>
-                    </li>
-                    <li>
-                        <a href="">Nuevo Control de Calidad</a>
-                    </li>
-                </ul>
-            </nav>
-
-                <form action="" method="">
-                    <input type="text" name="humedad" id="" placeholder="Humedad">
-                    <input type="text" name="impureza" id="" placeholder="Impurezas">
-                    <input type="text" name="partido" id="" placeholder="Grano Partido">
-                    <input type="text" name="yesado" id="" placeholder="Grano Yesado">
-                    <input type="text" name="rojo" id="" placeholder="Grano Rojo">
-                    <input type="text" name="olor" id="" placeholder="Olor">
-                    <input type="text" name="hongo" id="" placeholder="Daño por Hongo">
-                    <input type="text" name="calor" id="" placeholder="Daño por Calor">
-                    <input type="text" name="inmaduro" id="" placeholder="Inmaduro">
-                    <br>
-                    <input id="Aceptado" type="radio" name="Calidad">
-                    <label for="Aceptado">Aceptado</label>
-                    <input id="Rechazado" type="radio" name="Calidad">
-                    <label for="Rechazado">Rechazado</label>
-                    <br><br>
-                    <input type="submit" name="" id="" value="Guardad">
-                    <input type="reset" value="Borrar">
-    
-            <footer>
-                Todos los derechos reservados 2023
-            </footer>
+                <div class="headerText">
+                    <h1>Control de calidad al recibo de la materia prima</h1>
+                </div>
+        </header>
+        <main>
+            <div class="contenido">
+                <p>Por favor, ingrese los datos correspondientes a la calidad del producto</p>
+                <form action="../formato-de-recepcion/conexion/cali.php" method="POST">
+                    <input type="hidden" name="formato" value="<?php echo $_GET['formato']; ?>">
+                    <input type="text" name="humedad" id="humedad" placeholder="Humedad">
+                    <input type="text" name="impureza" id="impureza" placeholder="Impurezas">
+                    <div class="radio-container">
+                        <div class="radio-group">
+                            <label for="partido">Grano Partido:</label>
+                            <input type="checkbox" id="partido" name="partido">  
+                        </div>
+                        <div class="radio-group">
+                            <label for="yesado">Grano Yesado:</label>
+                            <input type="checkbox" id="yesado" name="yesado">
+                        </div>
+                        <div class="radio-group">
+                            <label for="rojo">Grano rojo:</label>
+                            <input type="checkbox" id="rojo" name="rojo">
+                        </div>                      
+                        <div class="radio-group">
+                            <label for="olor">Olor:</label>
+                            <input type="checkbox" id="olor" name="olor">
+                        </div>    
+                        <div class="radio-group">
+                            <label for="hongo">Daño por Hongo:</label>
+                            <input type="checkbox" id="hongo" name="hongo"> 
+                        </div> 
+                        <div class="radio-group">
+                            <label for="calor">Daño por Calor:</label>
+                            <input type="checkbox" id="calor" name="calor"> 
+                        </div> 
+                        <div class="radio-group">
+                            <label for="inmaduro">Inmaduro:</label>
+                            <input type="checkbox" id="inmaduro" name="inmaduro">
+                        </div> 
+                        <div class="radio-group">
+                            <label for="aceptado">Aceptado:</label>
+                            <input type="checkbox" id="aceptado" name="aceptado"> 
+                        </div>                                     
+                    </div> 
+                    <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">                  
+                    <input type="submit" name="submit" id="submit" value="Guardar">
+                </form>
+            </div>
+        </main>               
+    </section>   
+    <footer>
+        Todos los derechos reservados 2023
+    </footer>
 </body>
 </html>

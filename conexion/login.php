@@ -1,4 +1,7 @@
 <?php
+    // Incluye session_start() al comienzo del archivo
+    session_start();
+
     // Se incluye conexión a la base de datos
     include "conexion.php";
 
@@ -6,9 +9,9 @@
     $clave = $_POST['pass'];
 
     // Consulta a la base de datos un usuario registrado y obtiene el tipo de funcionario
-    $consulta = "SELECT tipofuncionario FROM funcionario WHERE usuario = '".$usu."' AND contraseña = '".$clave."'";
+    $consulta = "SELECT usuario_id, rol FROM usuarios WHERE usuario = '".$usu."' AND clave = '".$clave."'";
 
-    //echo $consulta;
+    
 
     $resultado = $conexion->query($consulta);
 
@@ -17,7 +20,11 @@
     if ($numreg == 1) {
         // Obtiene el tipo de funcionario desde el resultado de la consulta
         $fila = $resultado->fetch_assoc();
-        $tipoFuncionario = $fila['tipofuncionario'];
+        $tipoFuncionario = $fila['rol'];
+        $user_id = $fila['usuario_id'];
+
+        // Almacena el ID del usuario en una variable de sesión
+        $_SESSION['user_id'] = $user_id;
 
         // Redirige a la página correspondiente al tipo de funcionario
         switch ($tipoFuncionario) {

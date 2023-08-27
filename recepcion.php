@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +12,30 @@
     <script src="https://kit.fontawesome.com/88a36f4c42.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <?php
+        // Incluir el archivo de conexión
+        include "../formato-de-recepcion/conexion/conexion.php";
+
+        function obtenerRegistrosDesdeDB($conexion) {
+            // Código para obtener los registros desde la base de datos utilizando $conexion
+            $query = "SELECT formato FROM recepcion";
+            $resultado = $conexion->query($query);
+
+            $registros = [];
+
+            if ($resultado->num_rows > 0) {
+                while ($fila = $resultado->fetch_assoc()) {
+                    $registros[] = $fila;
+                }
+            }
+
+            $conexion->close();
+
+            return $registros;
+        }
+
+        $registros = obtenerRegistrosDesdeDB($conexion);
+    ?>
     <section>
         <header> 
             <i class="fa-solid fa-bars custom-icon" onclick="toggleDropdown()"></i>
@@ -44,42 +71,18 @@
                   <p>Generar nuevo formato</p>
                 </div>
             </a>
-            <div class="card2">
-                <i class="fa-regular fa-file-pdf"></i>
-                <div class="containerText2">
-                  <p>F1</p>
-                </div>
-            </div>
-            <div class="card2">
-                <i class="fa-regular fa-file-pdf"></i>
-                <div class="containerText2">
-                  <p>F2</p>
-                </div>
-            </div>
-            <div class="card2">
-                <i class="fa-regular fa-file-pdf"></i>
-                <div class="containerText2">
-                  <p>F3</p>
-                </div>
-            </div>
-            <div class="card2">
-                <i class="fa-regular fa-file-pdf"></i>
-                <div class="containerText2">
-                  <p>F4</p>
-                </div>
-            </div>
-            <div class="card2">
-                <i class="fa-regular fa-file-pdf"></i>
-                <div class="containerText2">
-                  <p>F5</p>
-                </div>
-            </div>
-            <div class="card2">
-                <i class="fa-regular fa-file-pdf"></i>
-                <div class="containerText2">
-                  <p>F6</p>
-                </div>
-            </div>
+            <?php if (!empty($registros)): ?>
+                <?php foreach ($registros as $registro): ?>
+                    <div class="card2" href="">
+                        <i class="fa-regular fa-file-pdf"></i>
+                        <div class="containerText2">
+                            <p><?php echo $registro["formato"]; ?></p>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>No hay registros disponibles.</p>
+            <?php endif; ?>
         </main>
     </section>    
     <!-- <script>
