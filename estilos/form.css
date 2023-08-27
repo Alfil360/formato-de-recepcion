@@ -76,11 +76,39 @@ form{
     align-items: center; /* Centra los elementos en el eje X por defecto */
 }
 
+form select{
+    margin: 1rem;
+    padding: 1rem;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ccc; /* Agrega un borde para mayor claridad */
+    background-color: #fff; /* Asegura que el fondo sea blanco */
+}
+
 form input{
     margin: 1rem;
     padding: 1rem;
     width: 100%; /* Ajusta el ancho de los campos */
     border-radius: 8px;
+}
+
+.radio-container{
+    width: 100%;
+}
+
+.radio-group {
+    display: flex;
+    align-items: center; 
+}
+
+.radio-group label {
+    flex-grow: 2;
+    width: 1500%;
+}
+
+.radio-group input{
+    margin-right: 0;
+    flex-grow: 1;
 }
 
 input[type="submit"]:hover{

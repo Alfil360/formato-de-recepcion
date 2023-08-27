@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +11,30 @@
     <script src="https://kit.fontawesome.com/88a36f4c42.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <?php
+        // Incluir el archivo de conexión
+        include "../formato-de-recepcion/conexion/conexion.php";
+
+        function obtenerRegistrosDesdeDB($conexion) {
+            // Código para obtener los registros desde la base de datos utilizando $conexion
+            $query = "SELECT formato FROM recepcion";
+            $resultado = $conexion->query($query);
+
+            $registros = [];
+
+            if ($resultado->num_rows > 0) {
+                while ($fila = $resultado->fetch_assoc()) {
+                    $registros[] = $fila;
+                }
+            }
+
+            $conexion->close();
+
+            return $registros;
+        }
+
+        $registros = obtenerRegistrosDesdeDB($conexion);
+    ?>
     <section>
         <header>            
             <i class="fa-solid fa-bars custom-icon" onclick="toggleDropdown()"></i>
@@ -24,49 +51,25 @@
                     </div>
                 </a>
                 <div class="divider"></div>
-                <a href="/index.html">
+                <a href="../formato-de-recepcion/index.php">
                     <div class="containerTextoAndIconDropdown">
                         <span>Cerrar sesión</span>
                         <img class="imagenDropdown" src="https://images.vexels.com/media/users/3/153377/isolated/lists/4e3ad7aee69e5da6de7e91b63e3952de-turn-off-stroke-icon.png" alt="on off icon">
                     </div> 
                 </a>                    
             </div>            
-            <a class="card2" href="/basculaForm.html">
-                <i class="fa-regular fa-file-pdf"></i>
-                <div class="containerText2">
-                  <p>F1</p>
-                </div>
-            </a>
-            <a class="card2" href="/basculaForm.html">
-                <i class="fa-regular fa-file-pdf"></i>
-                <div class="containerText2">
-                  <p>F2</p>
-                </div>
-            </a>
-            <a class="card2" href="/basculaForm.html">
-                <i class="fa-regular fa-file-pdf"></i>
-                <div class="containerText2">
-                  <p>F3</p>
-                </div>
-            </a>
-            <a class="card2" href="/basculaForm.html">
-                <i class="fa-regular fa-file-pdf"></i>
-                <div class="containerText2">
-                  <p>F4</p>
-                </div>
-            </a>
-            <a class="card2" href="/basculaForm.html">
-                <i class="fa-regular fa-file-pdf"></i>
-                <div class="containerText2">
-                  <p>F5</p>
-                </div>
-            </a>
-            <a class="card2" href="/basculaForm.html">
-                <i class="fa-regular fa-file-pdf"></i>
-                <div class="containerText2">
-                  <p>F6</p>
-                </div>
-            </a>
+            <?php if (!empty($registros)): ?>
+                <?php foreach ($registros as $registro): ?>
+                    <a class="card2" href="../formato-de-recepcion/basculaForm.php?formato=<?php echo $registro["formato"]; ?>">
+                        <i class="fa-regular fa-file-pdf"></i>
+                        <div class="containerText2">
+                            <p><?php echo $registro["formato"]; ?></p>
+                        </div>
+                    </a>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>No hay registros disponibles.</p>
+            <?php endif; ?>  
         </main>
     </section> 
     <script>
