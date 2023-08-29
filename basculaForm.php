@@ -19,11 +19,11 @@
         <header>
             <div class="imagenLogo">
                 <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/13077/windmill-clipart-md.png" alt="logo molino">
-                </div>
+            </div>
     
-                <div class="headerText">
+            <div class="headerText">
                 <h1>Báscula</h1>
-                </div>
+            </div>
         </header>
         <main>
             <div class="contenido">

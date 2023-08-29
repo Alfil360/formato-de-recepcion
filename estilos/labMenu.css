@@ -31,6 +31,12 @@ header{
     justify-content: space-between; /* Distribuye los elementos horizontalmente */
 }
 
+.imagenLogo{
+    position: absolute;
+    z-index: 2;
+    left: 20px;
+}
+
 .arrowLeft{
     display: inline-block;
     cursor: pointer;

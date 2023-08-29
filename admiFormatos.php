@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recepcion</title>
+    <title>Formatos</title>
     <link rel="stylesheet" href="../formato-de-recepcion/estilos/cards.css">
     <script src="https://kit.fontawesome.com/88a36f4c42.js" crossorigin="anonymous"></script>
 </head>
@@ -37,12 +37,12 @@
         $registros = obtenerRegistrosDesdeDB($conexion);
     ?>
     <section>
-        <header> 
-            <a class="imagenLogo" href="../formato-de-recepcion/index.php">
-                <img src="../formato-de-recepcion/imagenes/logout.svg" alt="logout">
+        <header>             
+            <a href="../formato-de-recepcion/admiMenu.php" class="arrowLeft">
+                <img src="../formato-de-recepcion/imagenes/arrow-left.svg" alt="arrow left">
             </a>  
             <div class="headerText">
-                <h1>Recepción</h1>
+                <h1>Aministración de Formatos</h1>
             </div>
             <a href="#" class="imagenPrint">
                 <img src="https://cdn.iconscout.com/icon/free/png-256/free-printer-1629573-1383399.png" id="iconoPrint" alt="printIcon">
@@ -51,13 +51,7 @@
                 <img src="https://cdn.iconscout.com/icon/free/png-256/eye-1767966-1502302.png" id="iconoEye" alt="eyetIcon">
             </a>           
         </header>
-        <main>            
-            <a href="../formato-de-recepcion/recepcionForm.php" class="card">
-                <i class="fa-solid fa-plus"></i>
-                <div class="containerText">
-                  <p>Generar nuevo formato</p>
-                </div>
-            </a>
+        <main>                        
             <?php if (!empty($registros)): ?>
                 <?php foreach ($registros as $registro): ?>
                     <div class="card2" href="">
@@ -71,32 +65,7 @@
                 <p>No hay registros disponibles.</p>
             <?php endif; ?>
         </main>
-    </section>    
-    <!-- <script>
-        function myFunction(x) {
-          x.classList.toggle("change");
-        }        
-    </script> -->
-    <script>
-        //Script para el menu desplegable
-        function toggleDropdown() {
-            var dropdown = document.getElementById("myDropdown");
-            dropdown.classList.toggle("show");
-        }
-
-        window.onclick = function(event) {
-            if (!event.target.matches('.custom-icon')) {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                var i;
-                for (i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        }
-    </script>
+    </section>
     <script>
         //Script para cambiar las card al hacer click
         //Seleccionar todas las cards por su clase y agregar un evento de clic a cada una
@@ -142,8 +111,6 @@
                 }
             });
         });
-    </script>
-    
-    
+    </script>   
 </body>
 </html>
