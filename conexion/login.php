@@ -38,7 +38,7 @@
                 header("location:../laboratorio.php");
                 break;
             case 'administrador':
-                header("location:../administrador.php");
+                header("location:../admiMenu.php");
                 break;
             default:
                 header("location:../Error.php");

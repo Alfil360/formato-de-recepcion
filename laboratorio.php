@@ -37,27 +37,14 @@
     ?>
     <section>
         <header>            
-            <i class="fa-solid fa-bars custom-icon" onclick="toggleDropdown()"></i>
+            <a class="imagenLogo" href="../formato-de-recepcion/index.php">
+                <img src="../formato-de-recepcion/imagenes/logout.svg" alt="logout">
+            </a>    
             <div class="headerText">
                 <h1>Laboratorio</h1>
-            </div>                      
+            </div>                     
         </header>
-        <main>
-            <div id="myDropdown" class="dropdown-content">
-                <a href="/actualizarDatos.html">
-                    <div class="containerTextoAndIconDropdown">
-                        <span>Perfil</span>
-                        <img class="imagenDropdown" src="https://cdn.iconscout.com/icon/free/png-256/free-user-circle-3609976-3014616.png" alt="circle user icon">
-                    </div>
-                </a>
-                <div class="divider"></div>
-                <a href="../formato-de-recepcion/index.php">
-                    <div class="containerTextoAndIconDropdown">
-                        <span>Cerrar sesión</span>
-                        <img class="imagenDropdown" src="https://images.vexels.com/media/users/3/153377/isolated/lists/4e3ad7aee69e5da6de7e91b63e3952de-turn-off-stroke-icon.png" alt="on off icon">
-                    </div> 
-                </a>                    
-            </div>   
+        <main>              
             <?php if (!empty($registros)): ?>
                 <?php foreach ($registros as $registro): ?>
                     <a class="card2" href="../formato-de-recepcion/laboratorioMenu.php?formato=<?php echo $registro["formato"]; ?>">
@@ -79,27 +66,7 @@
                 </div>
             </a> -->
         </main>
-    </section> 
-    <script>
-        //Script para el menu desplegable
-        function toggleDropdown() {
-            var dropdown = document.getElementById("myDropdown");
-            dropdown.classList.toggle("show");
-        }
-
-        window.onclick = function(event) {
-            if (!event.target.matches('.custom-icon')) {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                var i;
-                for (i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        }
-    </script>
+    </section>     
     <script>
         //Script para cambiar las card al hacer click
         //Seleccionar todas las cards por su clase y agregar un evento de clic a cada una
