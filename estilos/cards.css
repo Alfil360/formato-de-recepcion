@@ -51,6 +51,20 @@ header{
     color: #737373;
 }
 
+.arrowLeft:hover::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    z-index: -1; /* Coloca la sombra detrás del icono */
+}
+
 .custom-icon{
     display: inline-block;
     cursor: pointer;
@@ -81,9 +95,23 @@ header{
     display: block; /* Muestra el ícono */
 }
 
-#iconoPrint{
-    width: 45px;
+.imagenPrint:hover::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
     height: 50px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    z-index: -1; /* Coloca la sombra detrás del icono */
+}
+
+#iconoPrint{
+    width: 35px;
+    height: 40px;
     display: none;
 }
 
@@ -97,6 +125,20 @@ header{
     position: absolute;
     z-index: 2;
     right: 80px;
+}
+
+.span2:hover::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    z-index: -1; /* Coloca la sombra detrás del icono */
 }
 
 main{
@@ -171,6 +213,7 @@ main{
     border: 1px solid black;
     transform: scale(1.05);
     font-weight: bolder;
+    filter: brightness(0.5);
 }
 
 .svg-inline--fa{
@@ -181,6 +224,15 @@ main{
 .svg-inline--fa:active{
     color: #737373;
 }
+
+/* .icon-card{
+    height: 10em;
+    fill: #a6a6a6;
+} */
+
+/* .icon-card:active{
+    filter: brightness(0.5);
+} */
 
 .containerText {
     padding: 2px 16px;
