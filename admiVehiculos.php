@@ -77,7 +77,7 @@
                 // Si hay una card activa y no es la misma que la que se hizo clic, desactivarla
                 if (activeCard !== null && activeCard !== this) {
                 activeCard.style.backgroundColor = "";
-                activeCard.querySelector(".svg-inline--fa").style.color = ""; // Cambia esto a tu propiedad deseada
+                activeCard.querySelector("img").style.color = ""; // Cambia esto a tu propiedad deseada
                 activeCard.querySelector("p").style.color = "";
                 // activeCard.querySelector("span").style.display = "none"; // desactivar el icono activo
                 }
@@ -89,7 +89,7 @@
                 // Si la card está inactiva, cambiar su estilo de fondo a un nuevo color y marcarla como activa
                 if (this.style.backgroundColor === "") {
                 this.style.backgroundColor = "#a6a6a6"; // aqui se cambia el atributo
-                this.querySelector(".svg-inline--fa").style.color = "#737373"; // Cambia esto a tu propiedad deseada
+                this.querySelector("img").style.color = "#737373"; // Cambia esto a tu propiedad deseada
                 this.querySelector("p").style.color = "#737373";
                 this.querySelector("p").style.fontWeight = "bold";
                 // this.querySelector("span").style.display = ""; // activar el icono correspondiente
@@ -99,7 +99,7 @@
                 iconoHeaderEye.style.display = "block";
                 } else { // Si la card está activa, cambiar su estilo de fondo a su color original y marcarla como inactiva
                 this.style.backgroundColor = "";
-                this.querySelector(".svg-inline--fa").style.color = ""; // Cambia esto a tu propiedad deseada
+                this.querySelector("img").style.color = ""; // Cambia esto a tu propiedad deseada
                 this.querySelector("p").style.color = "";
                 // this.querySelector("span").style.display = "none"; // desactivar el icono activo
                 activeCard = null; // actualizar la referencia de la card activa

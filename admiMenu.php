@@ -13,7 +13,7 @@
 <body>
     <section>
         <header>  
-            <a class="imagenLogo" href="../formato-de-recepcion/index.php">
+            <a class="logout-container" href="../formato-de-recepcion/index.php">
                 <img src="../formato-de-recepcion/imagenes/logout.svg" alt="logout">
             </a>       
             <div class="headerText">

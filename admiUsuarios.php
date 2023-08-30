@@ -55,7 +55,13 @@
             <?php if (!empty($registros)): ?>
                 <?php foreach ($registros as $registro): ?>
                     <div class="card2">
-                        <img class="icon-card" src="../formato-de-recepcion/imagenes/user-avatar-filled-alt.svg" alt="usuarios">                        
+                        <div class="icon-card-container">
+                            <svg height="108" viewBox="0 0 32 32" width="108" xmlns="http://www.w3.org/2000/svg">
+                                <path d="m16 8a5 5 0 1 0 5 5 5 5 0 0 0 -5-5z" fill="#a6a6a6"/>
+                                <path d="m16 2a14 14 0 1 0 14 14 14.0158 14.0158 0 0 0 -14-14zm7.9925 22.9258a5.0016 5.0016 0 0 0 -4.9925-4.9258h-6a5.0016 5.0016 0 0 0 -4.9925 4.9258 12 12 0 1 1 15.985 0z" fill="#a6a6a6"/>
+                                <path d="m0 0h32v32h-32z" fill="none"/>
+                            </svg>                        
+                        </div>
                         <div class="containerText2">
                             <p><?php echo $registro["usuario"]; ?></p>
                         </div>
@@ -77,7 +83,8 @@
                 // Si hay una card activa y no es la misma que la que se hizo clic, desactivarla
                 if (activeCard !== null && activeCard !== this) {
                 activeCard.style.backgroundColor = "";
-                activeCard.querySelector(".svg-inline--fa").style.color = ""; // Cambia esto a tu propiedad deseada
+                activeCard.querySelector("path").style.fill = "";
+                activeCard.querySelector("path:nth-child(2)").style.fill = "";
                 activeCard.querySelector("p").style.color = "";
                 // activeCard.querySelector("span").style.display = "none"; // desactivar el icono activo
                 }
@@ -89,7 +96,8 @@
                 // Si la card está inactiva, cambiar su estilo de fondo a un nuevo color y marcarla como activa
                 if (this.style.backgroundColor === "") {
                 this.style.backgroundColor = "#a6a6a6"; // aqui se cambia el atributo
-                this.querySelector(".svg-inline--fa").style.color = "#737373"; // Cambia esto a tu propiedad deseada
+                this.querySelector("path").style.fill = "#737373";
+                this.querySelector("path:nth-child(2)").style.fill = "#737373";
                 this.querySelector("p").style.color = "#737373";
                 this.querySelector("p").style.fontWeight = "bold";
                 // this.querySelector("span").style.display = ""; // activar el icono correspondiente
@@ -99,7 +107,7 @@
                 iconoHeaderEye.style.display = "block";
                 } else { // Si la card está activa, cambiar su estilo de fondo a su color original y marcarla como inactiva
                 this.style.backgroundColor = "";
-                this.querySelector(".svg-inline--fa").style.color = ""; // Cambia esto a tu propiedad deseada
+                this.querySelector("path:nth-child(2)").style.fill = "";
                 this.querySelector("p").style.color = "";
                 // this.querySelector("span").style.display = "none"; // desactivar el icono activo
                 activeCard = null; // actualizar la referencia de la card activa
