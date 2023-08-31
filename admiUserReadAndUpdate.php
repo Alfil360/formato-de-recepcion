@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recepcion Form</title>
+    <title>Administracion de Usuario</title>
     <link rel="stylesheet" href="../formato-de-recepcion/estilos/form.css">
 </head>
 <body>
