@@ -92,6 +92,13 @@ form input{
     border-radius: 8px;
 }
 
+button{
+    margin: 1rem;
+    padding: 1rem;
+    width: 100%; /* Ajusta el ancho de los campos */
+    border-radius: 8px;
+}
+
 .radio-container{
     width: 100%;
 }
@@ -113,6 +120,14 @@ form input{
 
 input[type="submit"]:hover{
     background-color: green;
+}
+
+button:hover{
+    background-color: green;
+}
+
+#eliminarBtn:hover{
+    background-color: red;
 }
 
 footer{

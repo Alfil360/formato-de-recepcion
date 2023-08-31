@@ -80,7 +80,8 @@
                             mysqli_close($conexion);
                         ?>
                     </select>
-                    <input type="date" name="fecha_recibo">            
+                    <label for="fecha_recibo">Fecha de recibo</label>
+                    <input type="date" name="fecha_recibo" id="fecha_recibo">            
                     <input type="text" placeholder="Variedad" name="variedad" id="variedad">
                     <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
                     <input type="text" placeholder="Procedencia" name="procedencia" id="procedencia">
