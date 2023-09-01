@@ -31,9 +31,9 @@
     ?>
     <section>
         <header>
-            <div class="imagenLogo">
-                <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/13077/windmill-clipart-md.png" alt="logo molino">
-            </div>
+            <a href="../formato-de-recepcion/admiUsuarios.php" class="arrowLeft">
+                <img src="../formato-de-recepcion/imagenes/arrow-left.svg" alt="arrow left">
+            </a>
             <div class="headerText">
                 <h1>Aministración de Usuarios</h1>
             </div>            
