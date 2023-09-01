@@ -63,7 +63,7 @@
         <main>                        
             <?php if (!empty($registros)): ?>
                 <?php foreach ($registros as $registro): ?>
-                    <a class="card2" href="../formato-de-recepcion/admiUserReadAndUpdate.php?usuario=<?php echo $registro["usuario"]; ?>">
+                    <a class="card2" href="../formato-de-recepcion/admiUserReadUpdateDelete.php?usuario=<?php echo $registro["usuario"]; ?>">
                         <!-- Icono -->
                         <div class="icon-card-container">
                             <svg height="108" viewBox="0 0 32 32" width="108" xmlns="http://www.w3.org/2000/svg">

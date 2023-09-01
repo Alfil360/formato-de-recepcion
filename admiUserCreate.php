@@ -25,9 +25,9 @@
     ?>
     <section>
         <header>
-            <div class="imagenLogo">
-                <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/13077/windmill-clipart-md.png" alt="logo molino">
-            </div>
+            <a href="../formato-de-recepcion/admiUsuarios.php" class="arrowLeft">
+                <img src="../formato-de-recepcion/imagenes/arrow-left.svg" alt="arrow left">
+            </a>
             <div class="headerText">
                 <h1>Creación de Usuario</h1>
             </div>            
@@ -35,7 +35,7 @@
         <main>
             <div class="contenido">
                 <p>Por favor, ingrese los datos del usuario a crear</p>
-                <form action="../formato-de-recepcion/conexion/crateUsuario.php" method="POST">                   
+                <form action="../formato-de-recepcion/conexion/createUsuario.php" method="POST">                   
                     <label>Nombre:</label>
                     <input type="text" name="nombre">
                     <br>

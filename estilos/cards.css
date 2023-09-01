@@ -36,6 +36,20 @@ header{
     left: 20px;
 }
 
+.imagenLogo:hover::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    z-index: -1; /* Coloca la sombra detrás del icono */
+}
+
 .arrowLeft{
     display: inline-block;
     cursor: pointer;
@@ -84,84 +98,6 @@ header{
 .headerText h1{
     text-align: center;
     padding: 0 1rem; /* Reduce el padding en dispositivos pequeños */
-}
-
-.imagenPrint{
-    position: absolute;
-    z-index: 2;
-    right: 20px; 
-}
-
-.imagenPrint:hover::before{
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50px;
-    height: 50px;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 50%;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    z-index: -1; /* Coloca la sombra detrás del icono */
-}
-
-#iconoPrint{
-    width: 35px;
-    height: 40px;
-    display: none;
-}
-
-#iconoEye{
-    width: 45px;
-    height: 50px;
-    display: none;
-}
-
-#iconoDelete{
-    width: 35px;
-    height: 40px;
-    display: none;
-}
-
-.span2{
-    position: absolute;
-    z-index: 2;
-    right: 80px;
-}
-
-.span2:hover::before{
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50px;
-    height: 50px;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 50%;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    z-index: -1; /* Coloca la sombra detrás del icono */
-}
-
-.delete{
-    position: absolute;
-    z-index: 2;
-    right: 150px;
-}
-
-.delete:hover::before{
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50px;
-    height: 50px;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 50%;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    z-index: -1; /* Coloca la sombra detrás del icono */
 }
 
 main{
@@ -220,6 +156,7 @@ main{
     flex-direction: column;
     justify-content: space-evenly;
     margin: 1rem;
+    align-items: center;
 }
 
 .card:hover {
