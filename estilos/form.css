@@ -104,6 +104,7 @@ form{
     align-items: center; /* Centra los elementos en el eje X por defecto */
     margin-top: 1rem;
     margin-bottom: 1rem;
+    min-width: 229.6px;
 }
 
 form select{
@@ -124,19 +125,20 @@ form input{
 
 form button{
     padding: 1rem;
-    min-width: 229.6px; 
+    /* min-width: 229.6px;  */
+    width: 100%;
     border-radius: 8px;
 }
 
-#siguienteBtn{
+/* #siguienteBtn{
     margin: 1rem;
     padding: 1rem;
     border-radius: 8px;
     display: flex;
     flex-direction: column; 
-    align-items: center; /* Centra los elementos en el eje X por defecto */
+    align-items: center; 
     min-width: 229.6px;
-}
+} */
 
 .radio-container{
     width: 100%;
@@ -169,6 +171,11 @@ button:hover{
     background-color: red;
 }
 
+
+#siguienteBtn:hover{
+    background-color: #66cc33;
+}
+
 footer{
     position: fixed;
     bottom: 0;
@@ -188,9 +195,7 @@ footer{
     }
     form{
         width: 40%;
-    } 
-    #siguienteBtn{
-        width: 40%;
+        /* min-width: 366px; */
     }   
 }
 
@@ -207,9 +212,6 @@ footer{
         padding: 0 4rem;
     }
     form{
-        width: 25%;
-    }
-    #siguienteBtn{
         width: 25%;
     }
 }

@@ -15,8 +15,8 @@
         include '../formato-de-recepcion/conexion/conexion.php';
         
         // Obtener información de un registro específico
-        $id = $_GET["formato"]; // filtrar por parametro
-        $sql = "SELECT * FROM recepcion WHERE formato = '$id'";
+        $id = $_POST["formato"]; // filtrar por parametro
+        $sql = "SELECT * FROM pesajes WHERE formato = '$id'";
         $result = mysqli_query($conexion, $sql);
         $row = $result->fetch_assoc();
 
@@ -24,50 +24,43 @@
         $conexion->close();                            
     ?>
     <section>
-        <header>
-            <a href="../formato-de-recepcion/admiFormatos.php" class="arrowLeft">
-                <img src="../formato-de-recepcion/imagenes/arrow-left.svg" alt="arrow left">
-            </a>
+        <header>            
             <div class="headerText">
                 <h1>Aministración de Formatos</h1>
             </div>            
         </header>
         <main>
             <div class="contenido">
-                <p>Recepción</p>
-                <form action="../formato-de-recepcion/admiFormatoUpdateRecepcion.php" method="POST">
+                <p>Bascula</p>
+                <form action="../formato-de-recepcion/admiFormatoUpdateBascula.php" method="POST">
                     <label>Numero de Formato:</label>
                     <input type="number" name="formato" value="<?php echo $row["formato"]; ?>" readonly>
                     <br>                    
-                    <label>Proveedor:</label>
-                    <input type="number" name="proveedor" value="<?php echo $row["proveedor_id"]; ?>" readonly>
+                    <label>Presentación:</label>
+                    <input type="text" name="bultosrecibidos" value="<?php echo $row["tipo"]; ?>" readonly>
                     <br>
-                    <label>Conductor:</label>
-                    <input type="number" name="conductor" value="<?php echo $row["conductor_id"]; ?>" readonly>
+                    <label>Numero de Empaques:</label>
+                    <input type="number" name="cantidad" value="<?php echo $row["cantidad"]; ?>" readonly>
                     <br>
-                    <label>Vehiculo:</label>
-                    <input type="text" name="vehiculo" value="<?php echo $row["vehiculo_id"]; ?>" readonly>
+                    <label>Empaques Devueltos:</label>
+                    <input type="number" name="bultosdevueltos" value="<?php echo $row["bultos_devueltos"]; ?>" readonly>
                     <br>
-                    <label>Fecha de Recibo:</label>
-                    <input type="date" name="fechaRecibo" value="<?php echo $row["fecha_recibo"]; ?>" readonly>
+                    <label>Kilos Brutos:</label>
+                    <input type="number" name="kilosbrutos" value="<?php echo $row["kilos_brutos"]; ?>" readonly>
                     <br>
-                    <label>Variedad:</label>
-                    <input type="text" name="variedad" value="<?php echo $row["variedad"]; ?>" readonly>
+                    <label>Destare:</label>
+                    <input type="number" name="destare" value="<?php echo $row["destare"]; ?>" readonly>
                     <br>          
-                    <label>Procedencia:</label>
-                    <input type="text" name="procedencia" value="<?php echo $row["procedencia"]; ?>" readonly>
+                    <label>Kilos Netos:</label>
+                    <input type="number" name="kilosnetos" value="<?php echo $row["kilos_netos"]; ?>" readonly>
                     <br>
                     <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
                     <button type="submit">Editar</button>
-                </form>                               
-                <form action="../formato-de-recepcion/conexion/eliminarFormato.php" method="POST">
-                    <input type="hidden" name="formato" value="<?php echo $row["formato"]; ?>">
-                    <button type="submit" id="eliminarBtn">Eliminar</button>                    
-                </form>
-                <form action="../formato-de-recepcion/admiFormatoReadBascula.php" method="POST">
+                </form>                   
+                <form action="../formato-de-recepcion/admiFormatoReadCalidad.php" method="POST">
                     <input type="hidden" name="formato" value="<?php echo $row["formato"]; ?>">
                     <button type="submit" id="siguienteBtn">Siguiente</button>                    
-                </form>                                              
+                </form>                      
             </div>
         </main>                        
     </section> 
