@@ -9,8 +9,7 @@ body{
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;   
-    
+    align-items: center;       
     margin: 0; /* Elimina el margen predeterminado del cuerpo */
     background-color: #f0f0f0; /* Agrega un color de fondo */
 }
@@ -95,7 +94,7 @@ header img{
 
 p{
     font-weight: 700;
-    padding: 0 2rem 2rem 2rem;
+    padding: 0 2rem 0rem 2rem;
     text-align: center;
 }
 
@@ -103,6 +102,8 @@ form{
     display: flex;
     flex-direction: column; 
     align-items: center; /* Centra los elementos en el eje X por defecto */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 form select{
@@ -121,15 +122,20 @@ form input{
     border-radius: 8px;
 }
 
-button{
-    margin: 1rem;
+form button{
     padding: 1rem;
-    width: 100%; 
+    min-width: 229.6px; 
     border-radius: 8px;
 }
 
 #siguienteBtn{
-    width: 25%;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; /* Centra los elementos en el eje X por defecto */
+    min-width: 229.6px;
 }
 
 .radio-container{
@@ -182,7 +188,10 @@ footer{
     }
     form{
         width: 40%;
-    }    
+    } 
+    #siguienteBtn{
+        width: 40%;
+    }   
 }
 
 /* Estilos para pantallas de ordenador (por ejemplo, más de 1024px) */
@@ -198,6 +207,9 @@ footer{
         padding: 0 4rem;
     }
     form{
+        width: 25%;
+    }
+    #siguienteBtn{
         width: 25%;
     }
 }

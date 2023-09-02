@@ -36,12 +36,9 @@
             <div class="contenido">
                 <p>Recepción</p>
                 <form action="../formato-de-recepcion/conexion/updateRecep.php" method="POST">
-                    <label>Formato:</label>
+                    <label>Numero de Formato:</label>
                     <input type="number" name="formato" value="<?php echo $row["formato"]; ?>" readonly>
-                    <br>
-                    <label>Fecha de Recibo:</label>
-                    <input type="date" name="fechaRecibo" value="<?php echo $row["fecha_recibo"]; ?>" readonly>
-                    <br>
+                    <br>                    
                     <label>Proveedor:</label>
                     <input type="number" name="proveedor" value="<?php echo $row["proveedor_id"]; ?>" readonly>
                     <br>
@@ -51,12 +48,16 @@
                     <label>Vehiculo:</label>
                     <input type="text" name="vehiculo" value="<?php echo $row["vehiculo_id"]; ?>" readonly>
                     <br>
+                    <label>Fecha de Recibo:</label>
+                    <input type="date" name="fechaRecibo" value="<?php echo $row["fecha_recibo"]; ?>" readonly>
+                    <br>
                     <label>Variedad:</label>
                     <input type="text" name="variedad" value="<?php echo $row["variedad"]; ?>" readonly>
                     <br>          
                     <label>Procedencia:</label>
                     <input type="text" name="procedencia" value="<?php echo $row["procedencia"]; ?>" readonly>
-                    <br>                            
+                    <br>
+                    <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">                        
                     <button type="button" id="editarBtn">Editar</button>
                     <button type="submit" id="guardarBtn" style="display: none;">Guardar</button>
                 </form>
