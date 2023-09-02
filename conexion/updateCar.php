@@ -8,7 +8,7 @@
     
     
 
-    // Insertar los datos en la tabla Recepcion
+    // Insertar los datos en la tabla vehiculos
     $query = "UPDATE vehiculos
     SET modelo = '$modelo', marca = '$marca' 
     WHERE placa = '$placa'";

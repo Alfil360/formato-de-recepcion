@@ -12,7 +12,7 @@
     $rol = $_POST['rol'];
     
 
-    // Insertar los datos en la tabla Recepcion
+    // Insertar los datos en la tabla usuarios
     $query = "UPDATE usuarios
     SET nombre = '$nombre', apellido = '$apellido', correo = '$correo',
     cedula = '$cedula', usuario = '$usuario', rol = '$rol', clave = '$clave' 

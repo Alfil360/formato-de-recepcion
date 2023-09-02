@@ -31,7 +31,7 @@
                 <form action="../formato-de-recepcion/conexion/basc.php" method="POST">
                     <input type="hidden" name="formato" value="<?php echo $_GET['formato']; ?>">
                     <select name="bultosrecibidos" id="bultosrecibidos">
-                        <option value="" disabled selected>Bultos Recibidos</option>
+                        <option value="" disabled selected>Presentación</option>
                         <?php foreach ($enumMapping as $valor => $etiqueta) : ?>
                             <option value="<?php echo $valor; ?>"><?php echo $etiqueta; ?></option>
                         <?php endforeach; ?>
@@ -39,7 +39,7 @@
                     <input type="number" name="cantidad" id="cantidad" placeholder="Numero de Empaques">
                     <input type="number" name="bultosdevueltos" id="bultosdevueltos" placeholder="Empaques devueltos">
                     <input type="number" name="kilosbrutos" id="kilosbrutos" placeholder="Kilos Brutos" step="0.001" required>
-                    <input type="number" name="destare" id="destare" placeholder="destare" step="0.001" required>
+                    <input type="number" name="destare" id="destare" placeholder="Destare" step="0.001" required>
                     <input type="number" name="kilosnetos" id="kilosnetos" placeholder="Kilos Netos" step="0.001" readonly>
                     <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
                     <input type="submit" name="submit" id="submit" value="Guardar">

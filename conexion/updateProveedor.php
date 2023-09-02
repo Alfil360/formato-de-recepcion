@@ -8,7 +8,7 @@
     
     
 
-    // Insertar los datos en la tabla Recepcion
+    // Insertar los datos en la tabla Proveedores
     $query = "UPDATE proveedores
     SET nombre = '$nombre', apellido = '$apellido' 
     WHERE NIT = '$nit'";
