@@ -26,7 +26,7 @@
 
         if (mysqli_query($conexion, $query)) {
             // Redirigir a la página de recepcion
-            header("location: ../secado.php");
+            header("location: ../controlador/secadoControler.php?formato=$formato");
             exit;
         } else {
             echo "Error al registrar la recepción: " . mysqli_error($conexion);

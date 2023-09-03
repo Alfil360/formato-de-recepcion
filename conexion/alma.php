@@ -22,7 +22,7 @@
             header("location: ../laboratorio.php");
             exit;
         } else {
-            echo "Error al registrar la recepción: " . mysqli_error($conexion);
+            echo "Error al registrar el almacenamiento: " . mysqli_error($conexion);
         }
 
         // Cerrar la conexión

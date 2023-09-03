@@ -13,10 +13,9 @@
 <body>
     <section>
         <header>
-            <div class="imagenLogo">
-                <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/13077/windmill-clipart-md.png" alt="logo molino">
-            </div>
-    
+            <a href="../formato-de-recepcion/laboratorioMenu.php?formato=<?php echo $_GET['formato']; ?>" class="arrowLeft">
+                <img src="../formato-de-recepcion/imagenes/arrow-left.svg" alt="arrow left">
+            </a>    
             <div class="headerText">
                 <h1>Secado</h1>
             </div>
@@ -27,16 +26,16 @@
                 <form action="../formato-de-recepcion/conexion/seca.php" method="POST">
                     <input type="hidden" name="formato" value="<?php echo $_GET['formato']; ?>">
                     <label for="fechainicial">Fecha de Inicio</label>
-                    <input type="date" name="fechainicial" id="fechainicial" placeholder="Fecha de Inicio">
+                    <input type="date" name="fechainicial" id="fechainicial" placeholder="Fecha de Inicio" required>
                     <label for="horainicial">Hora de inicio</label>
-                    <input type="time" name="horainicial" id="horainicial">
+                    <input type="time" name="horainicial" id="horainicial" required>
                     <label for="fechafinal">Fecha de Finalización</label>
-                    <input type="date" name="fechafinal" id="fechafinal" placeholder="Fecha de Finalización">
+                    <input type="date" name="fechafinal" id="fechafinal" placeholder="Fecha de Finalización" required>
                     <label for="horafinal">Hora de Finalización</label>
-                    <input type="time" name="horafinal" id="horafinal">
-                    <input type="text" name="temperatura" id="temperatura" placeholder="Temperatura de Secado">
-                    <input type="text" name="bateria" id="bateria" placeholder="Baretria de Secado">
-                    <input type="text" name="humedad" id="humedad" placeholder="Humedad Final">
+                    <input type="time" name="horafinal" id="horafinal" required>
+                    <input type="text" name="temperatura" id="temperatura" placeholder="Temperatura de Secado" required>
+                    <input type="text" name="bateria" id="bateria" placeholder="Baretria de Secado" required>
+                    <input type="text" name="humedad" id="humedad" placeholder="Humedad Final" required>
                     <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
                     <input type="submit" name="submit" id="submit" value="Guardar">
                 </form>
