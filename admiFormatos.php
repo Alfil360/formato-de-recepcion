@@ -48,7 +48,7 @@
         <main>                        
             <?php if (!empty($registros)): ?>
                 <?php foreach ($registros as $registro): ?>
-                    <a class="card2" href="../formato-de-recepcion/admiFormatoReadUpdateDelete.php?formato=<?php echo $registro['formato']; ?>">
+                    <a class="card2" href="../formato-de-recepcion/admiFormatoReadDeleteRecepcion.php?formato=<?php echo $registro['formato']; ?>">
                         <i class="fa-regular fa-file-pdf"></i>
                         <div class="containerText2">
                             <p><?php echo $registro["formato"]; ?></p>

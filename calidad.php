@@ -13,21 +13,20 @@
 <body>
     <section>
         <header>
-                <div class="imagenLogo">
-                    <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/13077/windmill-clipart-md.png" alt="logo molino">
-                </div>
-        
-                <div class="headerText">
-                    <h1>Control de calidad al recibo de la materia prima</h1>
-                </div>
+            <a href="../formato-de-recepcion/laboratorioMenu.php?formato=<?php echo $_GET['formato']; ?>" class="arrowLeft">
+                <img src="../formato-de-recepcion/imagenes/arrow-left.svg" alt="arrow left">
+            </a>       
+            <div class="headerText">
+                <h1>Control de calidad al recibo de la materia prima</h1>
+            </div>
         </header>
         <main>
             <div class="contenido">
                 <p>Por favor, ingrese los datos correspondientes a la calidad del producto</p>
                 <form action="../formato-de-recepcion/conexion/cali.php" method="POST">
                     <input type="hidden" name="formato" value="<?php echo $_GET['formato']; ?>">
-                    <input type="text" name="humedad" id="humedad" placeholder="Humedad">
-                    <input type="text" name="impureza" id="impureza" placeholder="Impurezas">
+                    <input type="text" name="humedad" id="humedad" placeholder="Humedad" required>
+                    <input type="text" name="impureza" id="impureza" placeholder="Impurezas" required>
                     <div class="radio-container">
                         <div class="radio-group">
                             <label for="partido">Grano Partido:</label>

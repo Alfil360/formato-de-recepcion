@@ -13,10 +13,9 @@
 <body>
     <section>
         <header>
-            <div class="imagenLogo">
-                <img src="https://creazilla-store.fra1.digitaloceanspaces.com/cliparts/13077/windmill-clipart-md.png" alt="logo molino">
-            </div>
-    
+            <a href="../formato-de-recepcion/laboratorioMenu.php?formato=<?php echo $_GET['formato']; ?>" class="arrowLeft">
+                <img src="../formato-de-recepcion/imagenes/arrow-left.svg" alt="arrow left">
+            </a>    
             <div class="headerText">
                 <h1>Almacenamiento</h1>
             </div>
@@ -26,8 +25,8 @@
                 <p>Por favor, ingrese los datos correspondientes al almacenamiento del producto</p>
                 <form action="../formato-de-recepcion/conexion/alma.php" method="POST">
                     <input type="hidden" name="formato" value="<?php echo $_GET['formato']; ?>">
-                    <input type="text" name="silo" id="silo" placeholder="Sitio de destino" >
-                    <input type="text" name="lote" id="lote" placeholder="Lote">
+                    <input type="text" name="silo" id="silo" placeholder="Silo de destino" required>
+                    <input type="text" name="lote" id="lote" placeholder="Lote" required>
                     <textarea name="obs" cols="32" rows="13" placeholder="Observaciones"></textarea>
                     <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id']; ?>">
                     <input type="submit" name="submit" id="submit" value="Guardar">

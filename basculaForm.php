@@ -30,7 +30,7 @@
                 <p>Por favor, ingrese los datos correspondientes a los datos de la bascula</p>
                 <form action="../formato-de-recepcion/conexion/basc.php" method="POST">
                     <input type="hidden" name="formato" value="<?php echo $_GET['formato']; ?>">
-                    <select name="bultosrecibidos" id="bultosrecibidos">
+                    <select name="bultosrecibidos" id="bultosrecibidos" required>
                         <option value="" disabled selected>Presentación</option>
                         <?php foreach ($enumMapping as $valor => $etiqueta) : ?>
                             <option value="<?php echo $valor; ?>"><?php echo $etiqueta; ?></option>

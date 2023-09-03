@@ -63,7 +63,7 @@
                     <input type="text" name="clave" value="<?php echo $row["clave"]; ?>" readonly>
                     <br>
                     <select name="rol" id="rol" disabled>
-                        <option value="" disabled selected><?php echo $row["rol"]; ?></option>
+                        <option value="<?php echo $row["rol"]; ?>" disabled selected><?php echo $row["rol"]; ?></option>
                             
                             <?php foreach ($enum_values as $value) : ?>
                                 <option value="<?php echo $value; ?>"><?php echo $value; ?></option>
@@ -86,9 +86,10 @@
         const eliminarBtn = document.getElementById("eliminarBtn");
 
         editarBtn.addEventListener("click", function() {
-            document.querySelectorAll("input, select").forEach(element => {               
+            document.querySelectorAll("input, select, option").forEach(element => {               
                     element.removeAttribute("readonly");
-                    element.removeAttribute("disabled");                               
+                    element.removeAttribute("disabled");
+                    element.removeAttribute("disable selected");
             });
             editarBtn.style.display = "none"; // ocultar botón Editar
             eliminarBtn.style.display = "none";

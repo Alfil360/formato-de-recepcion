@@ -74,44 +74,44 @@
                     <br>
                     <label>Conductor:</label>                    
                     <select name="conductor" id="conductor">
-                    <option value="<?php echo $row["conductor_id"] ?>"><?php echo $cond; ?></option>
-                        <?php
-                            // Conexión a la base de datos 
-                            include '../formato-de-recepcion/conexion/conexion.php';
-                            
-                            // Consulta para obtener los conductores
-                            $consulta = "SELECT cedula, nombre, apellido FROM conductores";
-                            $result = mysqli_query($conexion, $consulta);
-                            
-                            // Generar opciones a partir de los datos obtenidos
-                            while ($crow = mysqli_fetch_assoc($result)) {
-                                echo '<option value="' . $crow['cedula'] . '">' . $crow['nombre'] . '  ' . $crow['apellido'] . '</option>';
-                            }
-                            
-                            // Cerrar la conexión
-                            mysqli_close($conexion);
-                        ?>
+                        <option value="<?php echo $row["conductor_id"] ?>"><?php echo $cond; ?></option>
+                            <?php
+                                // Conexión a la base de datos 
+                                include '../formato-de-recepcion/conexion/conexion.php';
+                                
+                                // Consulta para obtener los conductores
+                                $consulta = "SELECT cedula, nombre, apellido FROM conductores";
+                                $result = mysqli_query($conexion, $consulta);
+                                
+                                // Generar opciones a partir de los datos obtenidos
+                                while ($crow = mysqli_fetch_assoc($result)) {
+                                    echo '<option value="' . $crow['cedula'] . '">' . $crow['nombre'] . '  ' . $crow['apellido'] . '</option>';
+                                }
+                                
+                                // Cerrar la conexión
+                                mysqli_close($conexion);
+                            ?>
                     </select>
                     <br>
                     <label>Vehiculo:</label>
                     <select name="vehiculo" id="vehiculo">
-                    <option value="<?php echo $row["vehiculo_id"] ?>"><?php echo $row["vehiculo_id"]; ?></option>
-                        <?php
-                            // Conexión a la base de datos 
-                            include '../formato-de-recepcion/conexion/conexion.php';
-                            
-                            // Consulta para obtener los vehiculos
-                            $consulta = "SELECT placa FROM vehiculos";
-                            $result = mysqli_query($conexion, $consulta);
-                            
-                            // Generar opciones a partir de los datos obtenidos
-                            while ($vrow = mysqli_fetch_assoc($result)) {
-                                echo '<option value="' . $vrow['placa'] . '">' . $vrow['placa'] . '</option>';
-                            }
-                            
-                            // Cerrar la conexión
-                            mysqli_close($conexion);
-                        ?>
+                        <option value="<?php echo $row["vehiculo_id"] ?>"><?php echo $row["vehiculo_id"]; ?></option>
+                            <?php
+                                // Conexión a la base de datos 
+                                include '../formato-de-recepcion/conexion/conexion.php';
+                                
+                                // Consulta para obtener los vehiculos
+                                $consulta = "SELECT placa FROM vehiculos";
+                                $result = mysqli_query($conexion, $consulta);
+                                
+                                // Generar opciones a partir de los datos obtenidos
+                                while ($vrow = mysqli_fetch_assoc($result)) {
+                                    echo '<option value="' . $vrow['placa'] . '">' . $vrow['placa'] . '</option>';
+                                }
+                                
+                                // Cerrar la conexión
+                                mysqli_close($conexion);
+                            ?>
                     </select>
                     <br>
                     <label>Fecha de Recibo:</label>
