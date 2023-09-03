@@ -17,7 +17,6 @@
             <input type="password" placeholder="Ingresa contraseña" name="pass" id="password">
             <input type="submit" value="INICIAR SESIÓN">
         </form>
-        <a href="/signUp.html">Sign Up</a>
     </section>    
 </body>
 </html>
